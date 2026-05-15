@@ -7,7 +7,20 @@
   <title>Dulce Accesorio — Detalles Suaves, Hechos a Mano</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Defaults para el panel de Tweaks (persistido por el host) -->
+  <script>
+    window.__tweakDefaults = /*EDITMODE-BEGIN*/{
+      "palette": "rose",
+      "font": "playfair",
+      "cardShape": "arch",
+      "ctaTone": "mauve",
+      "hoverIntensity": "playful",
+      "petals": true,
+      "stitchOpacity": 0.85
+    }/*EDITMODE-END*/;
+  </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -41,7 +54,7 @@
         <img class="hero-logo" src="img/logo.png" alt="Dulce Accesorio — Detalles Suaves">
       </div>
       <div class="hero-scroll-hint" aria-hidden="true">
-        <span>Scrolleá</span>
+        <span>Desliza</span>
         <svg width="18" height="26" viewBox="0 0 18 26" fill="none" aria-hidden="true">
           <rect x="1" y="1" width="16" height="20" rx="8" stroke="currentColor" stroke-width="1.4"/>
           <circle class="scroll-dot" cx="9" cy="6.5" r="2.2" fill="currentColor"/>
@@ -53,6 +66,12 @@
   <!-- ── BRAND INTRO ────────────────────────────────────── -->
   <section class="brand-intro" id="intro" aria-labelledby="intro-title">
     <div class="stitch-texture" aria-hidden="true"></div>
+    <div class="petals" aria-hidden="true">
+      <span class="petal" style="top:18%; left:8%;  background:var(--rose-md); --dur:22s; --d:0s;"></span>
+      <span class="petal" style="top:62%; left:14%; background:var(--sage); --dur:26s; --d:-4s;"></span>
+      <span class="petal" style="top:32%; right:10%; background:var(--rose-lt); --dur:20s; --d:-2s;"></span>
+      <span class="petal" style="top:78%; right:18%; background:var(--sand-lt); --dur:24s; --d:-7s;"></span>
+    </div>
     <div class="container">
       <span class="eyebrow animate-in">Sobre Nosotras</span>
       <h2 class="section-title animate-in" id="intro-title">
@@ -68,9 +87,11 @@
 
         <div class="pillar animate-in">
           <div class="pillar-icon" aria-hidden="true">
-            <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
-              <path d="M19 5C11.82 5 6 10.82 6 18c0 4.2 2.1 7.9 5.3 10.2L19 33l7.7-4.8C30 25.9 32 22.2 32 18c0-7.18-5.82-13-13-13z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-              <path d="M14 18l3.5 3.5 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 7 v18"/>
+              <path d="M21 7 c2.5 0 4 1.5 4 3.5 s-1.5 3.5 -4 3.5"/>
+              <path d="M21 25 q-2 3 -5 3 q-3 0 -3 -2.5 q0 -2 2 -2"/>
+              <circle cx="13" cy="25.5" r="1" fill="currentColor" stroke="none"/>
             </svg>
           </div>
           <h3 class="pillar-title">Hecho a mano</h3>
@@ -79,26 +100,25 @@
 
         <div class="pillar animate-in" style="--delay:0.15s">
           <div class="pillar-icon" aria-hidden="true">
-            <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
-              <path d="M19 7l3.09 6.26 6.91 1.01-5 4.87 1.18 6.88L19 22.77l-6.18 3.25L14 19.14 9 14.27l6.91-1.01L19 7z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-              <path d="M13 32h12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 9 c0 4.5 -2 6.5 -6.5 6.5 c4.5 0 6.5 2 6.5 6.5 c0 -4.5 2 -6.5 6.5 -6.5 c-4.5 0 -6.5 -2 -6.5 -6.5 z"/>
+              <path d="M29 8 c0 1.8 -0.8 2.5 -2.3 2.5 c1.5 0 2.3 0.7 2.3 2.5 c0 -1.8 0.8 -2.5 2.3 -2.5 c-1.5 0 -2.3 -0.7 -2.3 -2.5 z" fill="currentColor" stroke="none"/>
+              <path d="M10 28 c0 1.5 -0.6 2 -2 2 c1.4 0 2 0.5 2 2 c0 -1.5 0.6 -2 2 -2 c-1.4 0 -2 -0.5 -2 -2 z" fill="currentColor" stroke="none"/>
             </svg>
           </div>
           <h3 class="pillar-title">100% personalizable</h3>
-          <p class="pillar-body">Elegís colores, tamaño, accesorios y hasta el nombre bordado. Tu visión, nuestras manos.</p>
+          <p class="pillar-body">Eliges colores, tamaño, accesorios y hasta el nombre bordado. Tu visión, nuestras manos.</p>
         </div>
 
         <div class="pillar animate-in" style="--delay:0.3s">
           <div class="pillar-icon" aria-hidden="true">
-            <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
-              <path d="M8 20C8 13.4 13.4 8 20 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-              <path d="M20 8c6.6 0 12 5.4 12 12s-5.4 12-12 12S8 26.6 8 20" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="3 2"/>
-              <path d="M24 14l-6 4-2-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M6 6l4 4M32 6l-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 30 c-1.2 -0.8 -11.5 -7.5 -11.5 -15.5 c0 -3.3 2.7 -5.5 5.5 -5.5 c2.4 0 4.5 1.2 6 3.5 c1.5 -2.3 3.6 -3.5 6 -3.5 c2.8 0 5.5 2.2 5.5 5.5 c0 8 -10.3 14.7 -11.5 15.5 z"/>
+              <path d="M13 17 l1.6 1.6 M17 16 l1.6 1.6 M21 16 l1.6 1.6 M25 17 l1.6 1.6" stroke-width="1.3"/>
             </svg>
           </div>
           <h3 class="pillar-title">Con amor y detalle</h3>
-          <p class="pillar-body">Materiales seleccionados, acabados impecables. Cada pieza pasa por control de calidad antes de llegar a vos.</p>
+          <p class="pillar-body">Materiales seleccionados, acabados impecables. Cada pieza pasa por control de calidad antes de llegar a ti.</p>
         </div>
 
       </div>
@@ -186,6 +206,11 @@
   <!-- ── PROCESO ────────────────────────────────────────── -->
   <section class="proceso" id="proceso" aria-labelledby="proceso-title">
     <div class="stitch-texture" aria-hidden="true"></div>
+    <div class="petals" aria-hidden="true">
+      <span class="petal" style="top:14%; right:8%;  background:var(--rose-md); --dur:24s; --d:-3s;"></span>
+      <span class="petal" style="top:68%; left:6%;   background:var(--rose-lt); --dur:28s; --d:-9s;"></span>
+      <span class="petal" style="top:42%; left:16%;  background:var(--sand-lt); --dur:21s; --d:-5s;"></span>
+    </div>
     <div class="container">
       <span class="eyebrow animate-in">El Proceso</span>
       <h2 class="section-title animate-in" id="proceso-title">
@@ -198,13 +223,31 @@
             <img src="img/inicio.png" alt="Personaje de crochet con canasta vacía — el pedido comienza" loading="lazy">
             <span class="proceso-tag">Tu idea</span>
           </figure>
-          <p class="proceso-estado-text">Empezás con un sueño, una fecha, alguien a quien sorprender...</p>
+          <p class="proceso-estado-text">Empiezas con un sueño, una fecha, alguien a quien sorprender...</p>
         </div>
 
         <div class="proceso-hilo" aria-hidden="true">
-          <svg viewBox="0 0 140 52" fill="none" preserveAspectRatio="none">
-            <path d="M4 26 Q35 8 70 26 Q105 44 136 26" stroke="var(--sand)" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round"/>
-            <path d="M124 19l13 7-13 7" stroke="var(--sand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg class="proceso-hilo-h" viewBox="0 0 160 52" fill="none" preserveAspectRatio="none">
+            <!-- Corazoncito en el origen -->
+            <path d="M6 26 c-0.6 -0.4 -3 -2 -3 -3.8 c0 -1 0.8 -1.6 1.6 -1.6 c0.6 0 1.1 0.3 1.4 0.9 c0.3 -0.6 0.8 -0.9 1.4 -0.9 c0.8 0 1.6 0.6 1.6 1.6 c0 1.8 -2.4 3.4 -3 3.8 z"
+                  fill="var(--sand)" opacity="0.9"/>
+            <!-- Hilo en curva con puntadas -->
+            <path d="M12 26 C 34 8, 62 8, 82 26 S 128 44, 152 28"
+                  stroke="var(--sand)" stroke-width="1.5" stroke-linecap="round"
+                  stroke-dasharray="3 5" opacity="0.85"/>
+            <!-- Ovillo final -->
+            <circle cx="153" cy="28" r="2.6" fill="var(--sand)" opacity="0.9"/>
+          </svg>
+          <svg class="proceso-hilo-v" viewBox="0 0 52 160" fill="none">
+            <!-- Corazoncito en el origen (arriba) -->
+            <path d="M26 6 c-0.6 -0.4 -3 -2 -3 -3.8 c0 -1 0.8 -1.6 1.6 -1.6 c0.6 0 1.1 0.3 1.4 0.9 c0.3 -0.6 0.8 -0.9 1.4 -0.9 c0.8 0 1.6 0.6 1.6 1.6 c0 1.8 -2.4 3.4 -3 3.8 z"
+                  fill="var(--sand)" opacity="0.9"/>
+            <!-- Hilo en curva con puntadas -->
+            <path d="M26 12 C 8 34, 8 62, 26 82 S 44 128, 28 152"
+                  stroke="var(--sand)" stroke-width="1.5" stroke-linecap="round"
+                  stroke-dasharray="3 5" opacity="0.85"/>
+            <!-- Ovillo final (abajo) -->
+            <circle cx="28" cy="153" r="2.6" fill="var(--sand)" opacity="0.9"/>
           </svg>
           <span class="proceso-hilo-label">2 a 3 semanas</span>
         </div>
@@ -214,7 +257,7 @@
             <img src="img/fin.png" alt="Personaje de crochet con canasta llena de frutas — figura lista" loading="lazy">
             <span class="proceso-tag proceso-tag--end">Tu figura</span>
           </figure>
-          <p class="proceso-estado-text">...y lo recibís hecho realidad, tejido a mano, tuyo para siempre.</p>
+          <p class="proceso-estado-text">...y lo recibes hecho realidad, tejido a mano, tuyo para siempre.</p>
         </div>
       </div>
 
@@ -223,15 +266,14 @@
         <div class="step animate-in">
           <div class="step-num" aria-hidden="true">01</div>
           <div class="step-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <rect x="3" y="2" width="16" height="20" rx="2" stroke="currentColor" stroke-width="1.3"/>
-              <path d="M6 8h10M6 12h10M6 16h6" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
-              <circle cx="22" cy="22" r="4.5" fill="var(--rose)"/>
-              <path d="M20.3 22l1.2 1.2 2.5-2.5" stroke="white" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="6.5"/>
+              <path d="M16.8 16.8 l5 5"/>
+              <path d="M12 14.6 c-0.6 -0.4 -2.7 -1.8 -2.7 -3.5 c0 -1 0.8 -1.6 1.6 -1.6 c0.5 0 0.9 0.3 1.1 0.8 c0.2 -0.5 0.6 -0.8 1.1 -0.8 c0.8 0 1.6 0.6 1.6 1.6 c0 1.7 -2.1 3.1 -2.7 3.5 z" fill="currentColor" stroke="none"/>
             </svg>
           </div>
-          <h3 class="step-title">Elegís tu figura</h3>
-          <p class="step-body">Revisá el catálogo y seleccionás el personaje, colores, tamaño y todos los detalles especiales que la hacen tuya.</p>
+          <h3 class="step-title">Eliges tu figura</h3>
+          <p class="step-body">Revisas el catálogo y seleccionas el personaje, colores, tamaño y todos los detalles especiales que la hacen tuya.</p>
         </div>
 
         <div class="step-connector" aria-hidden="true"></div>
@@ -239,13 +281,15 @@
         <div class="step animate-in" style="--delay:0.2s">
           <div class="step-num" aria-hidden="true">02</div>
           <div class="step-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <path d="M14 3C8.48 3 4 7.48 4 13c0 1.9.52 3.68 1.43 5.19L4 24l5.9-1.4A10 10 0 1 0 14 3z" stroke="currentColor" stroke-width="1.3"/>
-              <path d="M10 13l2.5 2.5 6-6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 9 a3 3 0 0 1 3 -3 h12 a3 3 0 0 1 3 3 v7 a3 3 0 0 1 -3 3 h-5.5 l-4 3.5 v-3.5 h-2.5 a3 3 0 0 1 -3 -3 z"/>
+              <circle cx="11" cy="12.5" r="1" fill="currentColor" stroke="none"/>
+              <circle cx="14" cy="12.5" r="1" fill="currentColor" stroke="none"/>
+              <circle cx="17" cy="12.5" r="1" fill="currentColor" stroke="none"/>
             </svg>
           </div>
-          <h3 class="step-title">Hacés tu pedido</h3>
-          <p class="step-body">Nos contactás por WhatsApp con todos los detalles. Confirmamos el pedido y acordamos el anticipo del 50%.</p>
+          <h3 class="step-title">Haces tu pedido</h3>
+          <p class="step-body">Nos contactas por WhatsApp con todos los detalles. Confirmamos el pedido y acordamos el anticipo del 50%.</p>
         </div>
 
         <div class="step-connector" aria-hidden="true"></div>
@@ -253,12 +297,17 @@
         <div class="step animate-in" style="--delay:0.4s">
           <div class="step-num" aria-hidden="true">03</div>
           <div class="step-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <path d="M14 3l3.09 6.26L24 10.27l-5 4.87 1.18 6.88L14 18.77 7.82 22l1.18-6.86L4 10.27l6.91-1.01L14 3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4.5" y="11" width="19" height="12.5" rx="2"/>
+              <path d="M4.5 14.5 h19"/>
+              <path d="M14 11 v12.5"/>
+              <path d="M14 11 c-2.5 -2.5 -6 -2.5 -6 0 c0 1.3 1.4 1.8 3 1.5"/>
+              <path d="M14 11 c2.5 -2.5 6 -2.5 6 0 c0 1.3 -1.4 1.8 -3 1.5"/>
+              <circle cx="14" cy="10.6" r="0.9" fill="currentColor" stroke="none"/>
             </svg>
           </div>
-          <h3 class="step-title">Recibís tu pieza</h3>
-          <p class="step-body">En 2 a 3 semanas tu figura única está lista. La enviamos a todo el país o la retirás personalmente.</p>
+          <h3 class="step-title">Recibes tu pieza</h3>
+          <p class="step-body">En 2 a 3 semanas tu figura única está lista. La enviamos a todo el país o la retiras personalmente.</p>
         </div>
 
       </div>
@@ -294,7 +343,7 @@
       </figure>
     </div>
     <div class="galeria-scroll-hint" aria-hidden="true">
-      <span>Deslizá para ver más</span>
+      <span>Desliza para ver más</span>
       <svg width="24" height="14" viewBox="0 0 24 14" fill="none">
         <path d="M2 7h20M15 2l5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -313,12 +362,12 @@
       </svg>
     </div>
     <div class="container cta-container">
-      <span class="eyebrow eyebrow--light animate-in">¿Te animás?</span>
+      <span class="eyebrow eyebrow--light animate-in">¿Te animas?</span>
       <h2 class="cta-title animate-in" id="cta-title">
         ¿Lista para<br><em>tu pieza única?</em>
       </h2>
       <p class="cta-sub animate-in">
-        Cada pedido es especial. Contanos qué tenés en mente
+        Cada pedido es especial. Cuéntanos qué tienes en mente
         y lo hacemos realidad, puntada a puntada.
       </p>
       <div class="cta-buttons animate-in">
@@ -352,5 +401,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/tweaks.js"></script>
 </body>
 </html>
