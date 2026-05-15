@@ -5,26 +5,28 @@
 
 /* ── CUSTOM PROPERTIES ────────────────────────────────────── */
 :root {
-  /* Paleta refinada — más cálida y tierna */
-  --cream:      #f3ede2;      /* crema un poco más cálida */
-  --cream-dp:   #e8dfd0;      /* crema profunda */
-  --blush:      #f6e6df;      /* blush rosado pálido */
-  --blush-dp:   #ecd2c8;      /* blush más saturado */
-  --sage-lt:    #d8dfd1;      /* sage clara */
-  --sage:       #b6c0ad;      /* sage media */
-  --sage-dk:    #8c9883;      /* sage oscura */
-  --teal:       #7d9690;
-  --sand:       #b09373;      /* sand más cálida */
-  --sand-lt:    #d6c0a3;
-  --brown-md:   #7d6044;
-  --brown-dk:   #5c3f24;      /* marrón texto principal */
-  --mauve:      #82515a;      /* mauve cálido — nuevo */
-  --mauve-dp:   #4a2932;      /* mauve profundo para CTA */
-  --rose:       #cf8f93;
-  --rose-md:    #e0adb0;
-  --rose-lt:    #f4d9d8;
-  --rose-pl:    #faeae8;      /* rose palísimo */
-  --white:      #fdfaf5;      /* off-white cálido */
+  /* Paleta pastel — Dulce Accesorio */
+  --cream:      #faf7f4;      /* Crema */
+  --cream-dp:   #ede7e0;      /* Crema profunda */
+  --blush:      #f5e9e7;      /* Rosa nude */
+  --blush-dp:   #e9c5c8;      /* Rosa pastel */
+  --sage-lt:    #dee3cf;      /* Sage clarísima */
+  --sage:       #bfc7a4;      /* Verde salvia pastel */
+  --sage-dk:    #8e9874;
+  --teal:       #9aa88a;
+  --sand:       #c9a89a;      /* nudo tierra cálido */
+  --sand-lt:    #e2cdc1;
+  --brown-md:   #6e5a4f;
+  --brown-dk:   #4a3a32;      /* texto principal — café oscuro suave */
+  --mauve:      #a17d99;      /* mauve lila tibia */
+  --mauve-dp:   #5a3a52;      /* mauve profundo para CTA */
+  --lilac:      #cdb7d9;      /* Lila suave */
+  --lilac-dp:   #9c7fae;
+  --rose:       #e9c5c8;      /* Rosa pastel */
+  --rose-md:    #efd4d6;
+  --rose-lt:    #f5e9e7;      /* Rosa nude */
+  --rose-pl:    #fbf3f2;      /* Rosa palísimo */
+  --white:      #ffffff;
 
   /* Fonts */
   --font-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
@@ -259,7 +261,7 @@ body::after {
 .nav-logo-link { display: block; }
 
 .nav-logo {
-  height: 44px;
+  height: 38px;
   width: auto;
   opacity: 0;
   transform: translateY(-8px) scale(0.95);
@@ -390,8 +392,11 @@ body::after {
 }
 
 .hero-logo {
-  width: clamp(280px, 38vw, 540px);
-  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.14));
+  width: clamp(300px, 42vw, 600px);
+  filter:
+    brightness(0) invert(1)
+    drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))
+    drop-shadow(0 8px 28px rgba(0, 0, 0, 0.22));
   animation: heroUp 1.6s var(--ease-out) 0.25s both;
 }
 
@@ -544,8 +549,109 @@ body::after {
 
 .productos .container {
   text-align: center;
-  margin-bottom: 4rem;
 }
+
+.productos .section-body { margin-bottom: 0; }
+
+/* ── FEATURED PAIR — dos showcase cards ───────────────────── */
+.featured-pair {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 4.5rem;
+  text-align: left;
+}
+
+.featured-item {
+  position: relative;
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition:
+    transform 0.7s var(--ease-out),
+    box-shadow 0.7s var(--ease-out);
+}
+
+.featured-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+}
+
+.featured-media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--blush);
+}
+
+.featured-item--confeccion .featured-media {
+  background: rgba(205, 183, 217, 0.32);
+}
+
+.featured-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s var(--ease-out);
+}
+
+.featured-item:hover .featured-media img { transform: scale(1.05); }
+
+.featured-caption {
+  padding: 1.8rem 2rem 2.2rem;
+}
+
+.featured-tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mauve);
+  background: var(--white);
+  padding: 0.4rem 0.95rem;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(207, 143, 147, 0.3);
+}
+
+.featured-tag--alt {
+  color: var(--lilac-dp);
+  border-color: rgba(205, 183, 217, 0.55);
+}
+
+.featured-title {
+  font-family: var(--font-display);
+  font-variation-settings: 'opsz' 48, 'SOFT' 100;
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--brown-dk);
+  margin-bottom: 0.7rem;
+}
+
+.featured-body {
+  font-size: 0.96rem;
+  font-weight: 400;
+  color: var(--brown-md);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+@media (max-width: 720px) {
+  .featured-pair {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ── PRODUCTOS — legacy (mantener por compat) ─────────────── */
 
 .masonry-grid {
   columns: 3;
@@ -1161,11 +1267,11 @@ body::after {
 }
 
 .footer-logo {
-  height: 56px;
+  height: 46px;
   width: auto;
   margin: 0 auto 1.5rem;
-  opacity: 0.7;
-  filter: grayscale(0.2) brightness(1.5);
+  opacity: 0.85;
+  filter: brightness(1.3) saturate(0.9);
 }
 
 .footer-tagline {
@@ -1574,6 +1680,376 @@ body[data-hover="playful"] .step:hover .step-icon { transform: scale(1.15) rotat
     width: calc(100vw - 1.5rem);
     right: 0.75rem;
     bottom: 0.75rem;
+  }
+}
+
+/* ── HERO TAGLINE ─────────────────────────────────────────── */
+.hero-tagline {
+  margin-top: 1.6rem;
+  font-family: var(--font-display);
+  font-variation-settings: 'opsz' 36, 'SOFT' 100;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.4);
+  animation: heroUp 1.6s var(--ease-out) 0.55s both;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SERVICIOS — Accesorios + Confección
+   ═══════════════════════════════════════════════════════════ */
+.servicios {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 50% at 100% 0%,  rgba(245, 233, 231, 0.6), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 0%  100%, rgba(222, 227, 207, 0.45), transparent 60%),
+    var(--cream);
+  padding: clamp(5.5rem, 11vw, 10rem) 0 clamp(5rem, 10vw, 9rem);
+  text-align: center;
+  overflow: hidden;
+}
+
+.servicios .container { position: relative; z-index: 1; }
+.servicios .section-body { margin-bottom: 0; }
+
+/* Hojas decorativas botánicas */
+.leaf-decor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+  animation: leafBreathe 9s ease-in-out infinite;
+}
+
+.leaf-decor svg { display: block; width: 100%; height: auto; }
+
+.leaf-decor--left {
+  top: 12%;
+  left: 2%;
+  width: clamp(60px, 7vw, 90px);
+  transform: rotate(-8deg);
+}
+
+.leaf-decor--right {
+  top: 18%;
+  right: 2%;
+  width: clamp(60px, 7vw, 90px);
+  transform: rotate(168deg) scale(-1, 1);
+  animation-delay: -3s;
+}
+
+@keyframes leafBreathe {
+  0%, 100% { transform: rotate(-8deg) translateY(0); }
+  50%      { transform: rotate(-6deg) translateY(-8px); }
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+  margin-top: 4.5rem;
+  text-align: left;
+}
+
+.servicio-card {
+  position: relative;
+  padding: 2.6rem 2.2rem 2.4rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(191, 199, 164, 0.35);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition:
+    transform 0.65s var(--ease-out),
+    box-shadow 0.65s var(--ease-out),
+    border-color 0.65s var(--ease);
+}
+
+/* Borde superior con puntadas tipo tarjeta */
+.servicio-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 10px;
+  background:
+    radial-gradient(circle at 7px 10px, var(--rose) 4.5px, transparent 5px) repeat-x;
+  background-size: 14px 14px;
+  background-position: -1px 0;
+  opacity: 0.85;
+}
+
+.servicio-card--alt::before {
+  background:
+    radial-gradient(circle at 7px 10px, var(--lilac) 4.5px, transparent 5px) repeat-x;
+  background-size: 14px 14px;
+  background-position: -1px 0;
+}
+
+.servicio-card::after {
+  content: '';
+  position: absolute;
+  inset: auto -15% -25% auto;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, var(--rose-pl) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.7s var(--ease);
+  pointer-events: none;
+}
+
+.servicio-card--alt::after {
+  background: radial-gradient(circle, rgba(205, 183, 217, 0.3) 0%, transparent 70%);
+}
+
+.servicio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(207, 143, 147, 0.4);
+}
+
+.servicio-card--alt:hover {
+  border-color: rgba(205, 183, 217, 0.55);
+}
+
+.servicio-card:hover::after { opacity: 1; }
+
+.servicio-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--rose-pl);
+  color: var(--mauve);
+  margin-bottom: 1.5rem;
+  transition: transform 0.6s var(--ease-spring), background 0.5s var(--ease);
+}
+
+.servicio-card--alt .servicio-badge {
+  background: rgba(205, 183, 217, 0.25);
+  color: var(--lilac-dp);
+}
+
+.servicio-card:hover .servicio-badge {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.servicio-badge svg { width: 38px; height: 38px; }
+
+.servicio-tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mauve);
+  background: var(--blush);
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  margin-bottom: 0.9rem;
+}
+
+.servicio-card--alt .servicio-tag {
+  background: rgba(205, 183, 217, 0.32);
+  color: var(--lilac-dp);
+}
+
+.servicio-title {
+  font-family: var(--font-display);
+  font-variation-settings: 'opsz' 72, 'SOFT' 100, 'WONK' 0;
+  font-size: clamp(2rem, 3.4vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--brown-dk);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.9rem;
+}
+
+.servicio-body {
+  font-size: 0.98rem;
+  font-weight: 400;
+  color: var(--brown-md);
+  line-height: 1.7;
+  margin-bottom: 1.4rem;
+  text-wrap: pretty;
+}
+
+.servicio-list {
+  display: grid;
+  gap: 0.55rem;
+  padding-top: 1.2rem;
+  border-top: 1px dashed rgba(110, 90, 79, 0.18);
+}
+
+.servicio-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--brown-md);
+  line-height: 1.55;
+}
+
+.servicio-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rose);
+}
+
+.servicio-card--alt .servicio-list li::before {
+  background: var(--lilac);
+}
+
+@media (max-width: 720px) {
+  .servicios-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+  .leaf-decor--right { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER STITCH BAND — banda inferior tipo tarjeta
+   ═══════════════════════════════════════════════════════════ */
+.footer-stitch-band {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  background: var(--sage);
+  padding: 1.4rem 1.5rem;
+  color: var(--brown-dk);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Puntadas dentro de la banda */
+.footer-stitch-band::before,
+.footer-stitch-band::after {
+  content: '';
+  position: absolute;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(255,255,255,0.6) 50%, transparent 50%);
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+}
+.footer-stitch-band::before { top: 0.55rem; }
+.footer-stitch-band::after  { bottom: 0.55rem; }
+
+.footer-heart {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.08));
+}
+
+.footer-stitch-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.footer-tag {
+  position: absolute;
+  right: 4%;
+  bottom: -8px;
+  width: 32px;
+  height: 38px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+@media (max-width: 540px) {
+  .footer-stitch-band { font-size: 0.66rem; letter-spacing: 0.14em; padding: 1.2rem 4rem 1.2rem 1.2rem; }
+  .footer-tag { right: 2%; width: 26px; height: 32px; }
+}
+
+/* ── FOOTER LINKS ─────────────────────────────────────────── */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0.5rem 0 2.2rem;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: rgba(243, 237, 226, 0.78);
+  transition: color 0.4s var(--ease), transform 0.4s var(--ease-out);
+}
+
+.footer-link:hover {
+  color: var(--rose-md);
+  transform: translateY(-1px);
+}
+
+.footer-link--static { cursor: default; }
+.footer-link--static:hover { color: rgba(243, 237, 226, 0.78); transform: none; }
+
+.footer-link-ic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(243, 237, 226, 0.07);
+  color: var(--rose-md);
+  flex-shrink: 0;
+  transition: background 0.4s var(--ease);
+}
+
+.footer-link:hover .footer-link-ic {
+  background: rgba(243, 237, 226, 0.14);
+}
+.brand-mark {
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  z-index: 0;
+  user-select: none;
+}
+
+.brand-mark--intro {
+  top: 6%;
+  right: -3%;
+  width: clamp(180px, 22vw, 320px);
+  opacity: 0.22;
+  transform: rotate(8deg);
+  animation: brandMarkFloat 14s ease-in-out infinite;
+}
+
+@keyframes brandMarkFloat {
+  0%, 100% { transform: rotate(8deg) translateY(0); }
+  50%      { transform: rotate(6deg) translateY(-12px); }
+}
+
+@media (max-width: 720px) {
+  .brand-mark--intro {
+    top: auto;
+    bottom: -4%;
+    right: -8%;
+    opacity: 0.16;
   }
 }
 
